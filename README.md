@@ -1,2 +1,30 @@
-# nodepaster
-cli tool for pasting to dpaste.de
+# dpaster
+
+Cli tool for pasting to dpaste.de
+
+Accepts from stdin, you can provide type of the snippet.
+
+## Installation
+
+```
+npm isntall -g nodepaster
+```
+
+## Usage
+
+```
+dpaster -h
+```
+
+```
+echo "Something" | dpaster
+```
+
+```
+cat cli.js | dpaster -t js | pbcopy
+```
+
+```
+# if you don't mind command repeating
+!! | dpaster | pbcopy
+```
