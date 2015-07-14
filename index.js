@@ -18,7 +18,7 @@ class Paster {
         }, function (err, response, body) {
             // TODO handle errors
             if (!err) {
-                console.log(body);
+                console.log(`\n${body}`);
             }
         });
     }
