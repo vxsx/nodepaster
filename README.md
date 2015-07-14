@@ -7,7 +7,7 @@ Accepts from stdin, you can provide type of the snippet.
 ## Installation
 
 ```
-npm isntall -g nodepaster
+npm install -g nodepaster
 ```
 
 ## Usage
