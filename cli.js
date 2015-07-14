@@ -6,8 +6,6 @@ import updateNotifier from 'update-notifier';
 import paster from './index.es5';
 import pkg from './package.json';
 
-updateNotifier({ pkg: pkg }).notify();
-
 cli.setApp('dpaster', pkg.version);
 cli.enable('version');
 cli.setUsage('echo "Output" | dpaster [OPTIONS]');
@@ -17,6 +15,7 @@ const options = cli.parse({
 });
 
 if (process.stdin.isTTY) {
+    updateNotifier({ pkg: pkg }).notify({ defer: false });
     cli.getUsage();
 } else {
     cli.withStdin((data) => {
