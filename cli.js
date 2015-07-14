@@ -10,6 +10,7 @@ updateNotifier({ pkg: pkg }).notify();
 
 cli.setApp('dpaster', pkg.version);
 cli.enable('version');
+cli.setUsage('echo "Output" | dpaster [OPTIONS]');
 
 const options = cli.parse({
     type: ['t', 'Type of the snippet', 'string', 'python']
