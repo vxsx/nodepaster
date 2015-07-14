@@ -8,6 +8,8 @@ import pkg from './package.json';
 
 updateNotifier({ pkg: pkg }).notify();
 
+cli.enable('version');
+
 const options = cli.parse({
     type: ['t', 'Type of the snippet', 'string', 'python']
 });
