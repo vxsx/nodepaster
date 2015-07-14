@@ -15,6 +15,10 @@ const options = cli.parse({
     type: ['t', 'Type of the snippet', 'string', 'python']
 });
 
-cli.withStdin((data) => {
-    paster.upload(data, options.type);
-});
+if (process.stdin.isTTY) {
+    cli.getUsage();
+} else {
+    cli.withStdin((data) => {
+        paster.upload(data, options.type);
+    });
+}

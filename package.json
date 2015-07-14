@@ -1,6 +1,6 @@
 {
   "name": "nodepaster",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Cli tool for pasting to dpaste.de",
   "main": "index.es5.js",
   "bin": {
