@@ -8,6 +8,7 @@ import pkg from './package.json';
 
 updateNotifier({ pkg: pkg }).notify();
 
+cli.setApp('dpaster', pkg.version);
 cli.enable('version');
 
 const options = cli.parse({
