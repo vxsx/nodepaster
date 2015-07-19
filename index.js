@@ -1,6 +1,5 @@
 // jshint esnext:true
 import request from 'request';
-import cli from 'cli';
 
 class Paster {
     constructor(api, opts = {
