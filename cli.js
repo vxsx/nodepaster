@@ -3,8 +3,24 @@
 
 import cli from 'cli';
 import updateNotifier from 'update-notifier';
-import paster from './index.es5';
+import Paster from './index.es5';
 import pkg from './package.json';
+
+const paster = new Paster('https://dpaste.de/api/', {
+    onBeforeUpload() {
+        if (process.stdout.isTTY) {
+            cli.spinner('Uploading...');
+        }
+    },
+    onBeforeSuccess() {
+        if (process.stdout.isTTY) {
+            cli.spinner('', true);
+        }
+    },
+    onFail() {
+        cli.spinner('Sorry, there was a connection error.', true);
+    }
+});
 
 cli.setApp('dpaster', pkg.version);
 cli.enable('version');
