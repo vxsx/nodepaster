@@ -18,7 +18,8 @@ class Paster {
             formData: {
                 content: content,
                 lexer: type,
-                format: 'url'
+                format: 'url',
+                expires: expires
             }
         }, (err, response, body) => {
             if (!err) {
