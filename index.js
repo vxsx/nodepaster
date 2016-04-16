@@ -15,6 +15,7 @@ class Paster {
         this.opts.onBeforeUpload();
         request.post({
             url: this.api,
+            rejectUnauthorized: false,
             formData: {
                 content: content,
                 lexer: type,
@@ -26,6 +27,7 @@ class Paster {
                 this.opts.onBeforeSuccess();
                 console.log(`\n${body}`);
             } else {
+                console.log(err);
                 this.opts.onFail();
             }
         });
